@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('users', function () {
-    return 'Users!';
-});
+Route::group(['prefix'=>'member'], function () {
+    Route::get('index', 'MemberController@index')->name('member.index');
+  });
